@@ -1,0 +1,26 @@
+services:
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: koenkk/zigbee2mqtt
+    depends_on:
+      - mqtt
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - /run/udev:/run/udev:ro
+    ports:
+      - 8080:8080
+    environment:
+      - TZ=Europe/Amsterdam
+    devices:
+      - /dev/path/to/your/zigbee-adapter:/dev/ttyACM0
+  mqtt:
+    container_name: mqtt-server
+    image: eclipse-mosquitto
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ./mosquitto.conf
+        target: /mosquitto/config/mosquitto.conf
+    ports:
+      - 1883:1883
