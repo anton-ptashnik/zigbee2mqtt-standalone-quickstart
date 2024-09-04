@@ -1,0 +1,4 @@
+data/log
+data/database*
+data/state.json
+coordinator_backup.json

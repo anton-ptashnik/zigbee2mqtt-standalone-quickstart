@@ -1,7 +1,7 @@
 services:
   zigbee2mqtt:
     container_name: zigbee2mqtt
-    image: koenkk/zigbee2mqtt
+    image: koenkk/zigbee2mqtt:1.40.0
     depends_on:
       - mqtt
     restart: unless-stopped
@@ -16,7 +16,7 @@ services:
       - /dev/path/to/your/zigbee-adapter:/dev/ttyACM0
   mqtt:
     container_name: mqtt-server
-    image: eclipse-mosquitto
+    image: eclipse-mosquitto:2.0.18
     restart: unless-stopped
     volumes:
       - type: bind
