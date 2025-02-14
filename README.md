@@ -20,4 +20,4 @@ With Docker installed it takes just a few seconds to start this zigbee2mqtt setu
 docker compose up
 ```
 
-Once deployed a frontend will be accessible on http://localhost:1883. Now you can pair and control your Zigbee devices
+Once deployed a frontend will be accessible on http://localhost:8080. Now you can pair and control your Zigbee devices
