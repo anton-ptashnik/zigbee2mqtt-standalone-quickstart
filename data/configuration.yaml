@@ -1,14 +1,13 @@
-homeassistant: false
-permit_join: false
-frontend: true
+homeassistant:
+  enabled: false
+frontend:
+  enabled: true
 mqtt:
   base_topic: zigbee2mqtt
   server: mqtt://mqtt-server
 serial:
   port: /dev/ttyACM0
-advanced:
-  homeassistant_legacy_entity_attributes: false
-  legacy_api: false
-  legacy_availability_payload: false
-device_options:
-  legacy: false
+  adapter: ember
+advanced: {}
+device_options: {}
+version: 4
